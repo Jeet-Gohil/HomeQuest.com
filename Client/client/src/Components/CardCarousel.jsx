@@ -1,8 +1,13 @@
 import React from 'react';
 import "./comp.css";
+import { useNavigate } from 'react-router-dom';
 
 
 const CardCarousel = ({properties =[]}) => {
+  const navigate = useNavigate();
+  const onClick = (propertyName) => {
+    navigate(propertyName);
+  }
   const chunkArray = (arr, size) => {
     const repeatArray = [...arr, ...arr, ...arr];
     const result = [];
@@ -24,7 +29,7 @@ const CardCarousel = ({properties =[]}) => {
               <div className="col-md-5 mx-2" key={item.id}>
                 <div className="card h-100 card-fixed-size">  {/* Applied class for fixed size */}
                   <div className="card-image-container"> {/* Image container to control dimensions */}
-                    <img src={item.image_data} className="card-img-top img-fixed-size" alt={item.name} />
+                    <img src={item.image_data} className="card-img-top img-fixed-size" alt={item.name} onClick={()=> onClick("/homeQuest/itemName")}/>
                   </div>
                   <div className="card-body">
                     <h5 className="card-title">{item.name}

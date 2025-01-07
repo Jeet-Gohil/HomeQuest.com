@@ -11,7 +11,7 @@ const GoogleMaps = () => {
     try{
       if (lat && lng) {
         setMapCenter({lat, lng});
-        console.log(mapCenter);
+        
       }
     }
     catch(err){}
