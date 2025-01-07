@@ -15,7 +15,7 @@ const Map = ({latitude, longitude}) => {
         lng: longitude, // default longitude
       };
   const { isLoaded, loadError } = useLoadScript({
-    googleMapsApiKey: 'AIzaSyCDt7YfBg7FrQmqQOgGpv0nctRdwXiZdVs',
+    googleMapsApiKey: process.env.GOOGLE_MAPS_API_KEY,
     libraries,
   });
 
